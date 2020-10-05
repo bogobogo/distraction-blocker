@@ -1,0 +1,19 @@
+{
+    "name": "Distraction Blocker",
+    "description": "Distraction Blocker",
+    "version": "0.1",
+    "manifest_version": 2,
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["build/content/content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "background": {
+        "scripts": ["./hot-reload.js", "build/background/background.js"]
+    },
+    "options_page": "./options.html",
+    "permissions": ["downloads", "management", "storage", "activeTab", "tabs"],
+    "web_accessible_resources": ["assets/*.svg", "assets/*.png"]
+  }
